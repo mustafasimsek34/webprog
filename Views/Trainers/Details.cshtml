@@ -1,0 +1,116 @@
+@model FitnessCenterManagement.Models.Trainer
+
+@{
+    ViewData["Title"] = "Eğitmen Detayları";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0"><i class="bi bi-person-badge"></i> Eğitmen Detayları</h4>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-3">İsim:</dt>
+                        <dd class="col-sm-9">@Model.Name</dd>
+                        
+                        <dt class="col-sm-3">E-posta:</dt>
+                        <dd class="col-sm-9">@Model.Email</dd>
+                        
+                        <dt class="col-sm-3">Telefon:</dt>
+                        <dd class="col-sm-9">@Model.PhoneNumber</dd>
+                        
+                        <dt class="col-sm-3">Durum:</dt>
+                        <dd class="col-sm-9">
+                            @if (Model.IsAvailable)
+                            {
+                                <span class="badge bg-success">Müsait</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Müsait Değil</span>
+                            }
+                        </dd>
+                        
+                        <dt class="col-sm-3">Biyografi:</dt>
+                        <dd class="col-sm-9">@Model.Biography</dd>
+                        
+                        <dt class="col-sm-3">Uzmanlıklar:</dt>
+                        <dd class="col-sm-9">
+                            @if (Model.TrainerServices.Any())
+                            {
+                                <ul class="list-group">
+                                    @foreach (var ts in Model.TrainerServices)
+                                    {
+                                        <li class="list-group-item">
+                                            <strong>@ts.Service.Name</strong> - @ts.Service.Duration min - ₺@ts.Service.Price
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+                                <span class="text-muted">Hizmet atanmamış</span>
+                            }
+                        </dd>
+                    </dl>
+                    
+                    <hr>
+                    
+                    <h5>Haftalık Program</h5>
+                    @if (Model.Availabilities.Any())
+                    {
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Gün</th>
+                                    <th>Başlangıç Saati</th>
+                                    <th>Bitiş Saati</th>
+                                    <th>Durum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var avail in Model.Availabilities.OrderBy(a => a.DayOfWeek))
+                                {
+                                    <tr>
+                                        <td>@avail.DayOfWeek</td>
+                                        <td>@avail.StartTime</td>
+                                        <td>@avail.EndTime</td>
+                                        <td>
+                                            @if (avail.IsActive)
+                                            {
+                                                <span class="badge bg-success">Aktif</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-secondary">Pasif</span>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <p class="text-muted">Müsaitlik programı ayarlanmamış</p>
+                    }
+                    
+                    <div class="mt-4">
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">
+                            <i class="bi bi-pencil"></i> Düzenle
+                        </a>
+                        <a asp-action="ManageAvailability" asp-route-id="@Model.Id" class="btn btn-warning">
+                            <i class="bi bi-calendar3"></i> Programı Yönet
+                        </a>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Listeye Dön
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

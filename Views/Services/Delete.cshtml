@@ -1,0 +1,46 @@
+@model FitnessCenterManagement.Models.Service
+
+@{
+    ViewData["Title"] = "Hizmeti Sil";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0"><i class="bi bi-exclamation-triangle"></i> Hizmeti Sil</h4>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-circle"></i> Bu hizmeti silmek istediğinizden emin misiniz?
+                    </div>
+                    
+                    <dl class="row">
+                        <dt class="col-sm-4">İsim:</dt>
+                        <dd class="col-sm-8">@Model.Name</dd>
+                        
+                        <dt class="col-sm-4">Açıklama:</dt>
+                        <dd class="col-sm-8">@Model.Description</dd>
+                        
+                        <dt class="col-sm-4">Fiyat:</dt>
+                        <dd class="col-sm-8">₺@Model.Price.ToString("N2")</dd>
+                        
+                        <dt class="col-sm-4">Süre:</dt>
+                        <dd class="col-sm-8">@Model.Duration dakika</dd>
+                    </dl>
+                    
+                    <form asp-action="Delete" method="post" class="text-center mt-4">
+                        <input type="hidden" asp-for="Id" />
+                        <button type="submit" class="btn btn-danger">
+                            <i class="bi bi-trash"></i> Silmeyi Onayla
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> İptal
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

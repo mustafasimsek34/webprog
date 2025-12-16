@@ -1,0 +1,73 @@
+@model FitnessCenterManagement.Models.Gym
+
+@{
+    ViewData["Title"] = "Spor Salonu Oluştur";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0"><i class="bi bi-plus-circle"></i> Yeni Spor Salonu Oluştur</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label"></label>
+                            <input asp-for="Name" class="form-control" placeholder="Enter gym name" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Location" class="form-label"></label>
+                            <input asp-for="Location" class="form-control" placeholder="Enter address" />
+                            <span asp-validation-for="Location" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="WorkingHoursStart" class="form-label"></label>
+                                <input asp-for="WorkingHoursStart" class="form-control" type="time" />
+                                <span asp-validation-for="WorkingHoursStart" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="WorkingHoursEnd" class="form-label"></label>
+                                <input asp-for="WorkingHoursEnd" class="form-control" type="time" />
+                                <span asp-validation-for="WorkingHoursEnd" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="ContactPhone" class="form-label"></label>
+                            <input asp-for="ContactPhone" class="form-control" placeholder="Enter contact phone" />
+                            <span asp-validation-for="ContactPhone" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label"></label>
+                            <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter gym description"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-check-circle"></i> Oluştur
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left"></i> Listeye Dön
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

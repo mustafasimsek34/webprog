@@ -1,0 +1,162 @@
+@model FitnessCenterManagement.ViewModels.BookAppointmentViewModel
+
+@{
+    ViewData["Title"] = "Randevu Al";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0"><i class="bi bi-calendar-plus"></i> Yeni Randevu Al</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Book" method="post" id="bookingForm">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="ServiceId" class="form-label"></label>
+                            <select asp-for="ServiceId" class="form-select" id="serviceSelect">
+                                <option value="">-- Hizmet Seçin --</option>
+                                @if (ViewBag.Services != null)
+                                {
+                                    @foreach (var service in (SelectList)ViewBag.Services)
+                                    {
+                                        <option value="@service.Value">@service.Text</option>
+                                    }
+                                }
+                            </select>
+                            <span asp-validation-for="ServiceId" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="TrainerId" class="form-label"></label>
+                            <select asp-for="TrainerId" class="form-select" id="trainerSelect" disabled>
+                                <option value="">-- Önce Bir Hizmet Seçin --</option>
+                            </select>
+                            <span asp-validation-for="TrainerId" class="text-danger"></span>
+                            <div id="trainerInfo" class="mt-2 text-muted small"></div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="AppointmentDate" class="form-label"></label>
+                                <input asp-for="AppointmentDate" class="form-control" type="date" id="appointmentDate" />
+                                <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="AppointmentTime" class="form-label"></label>
+                                <input asp-for="AppointmentTime" class="form-control" type="time" id="appointmentTime" />
+                                <span asp-validation-for="AppointmentTime" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div id="availabilityCheck" class="alert" style="display:none;"></div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Notes" class="form-label"></label>
+                            <textarea asp-for="Notes" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="Notes" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="MyAppointments" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left"></i> Randevularıma Dön
+                            </a>
+                            <button type="submit" class="btn btn-success" id="submitBtn">
+                                <i class="bi bi-check-circle"></i> Randevu Al
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+    <script>
+        $(document).ready(function() {
+            // When service is selected, load trainers
+            $('#serviceSelect').change(function() {
+                var serviceId = $(this).val();
+                if (serviceId) {
+                    $.ajax({
+                        url: '@Url.Action("GetTrainersByService", "Appointment")',
+                        type: 'GET',
+                        data: { serviceId: serviceId },
+                        success: function(data) {
+                            $('#trainerSelect').empty();
+                            $('#trainerSelect').append('<option value="">-- Bir Eğitmen Seçin --</option>');
+                            $.each(data, function(i, trainer) {
+                                $('#trainerSelect').append('<option value="' + trainer.id + '" data-bio="' + trainer.biography + '">' + trainer.name + '</option>');
+                            });
+                            $('#trainerSelect').prop('disabled', false);
+                        }
+                    });
+                } else {
+                    $('#trainerSelect').empty();
+                    $('#trainerSelect').append('<option value="">-- Önce Bir Hizmet Seçin --</option>');
+                    $('#trainerSelect').prop('disabled', true);
+                    $('#trainerInfo').html('');
+                }
+            });
+            
+            // Show trainer bio when selected
+            $('#trainerSelect').change(function() {
+                var selectedOption = $(this).find('option:selected');
+                var bio = selectedOption.data('bio');
+                if (bio) {
+                    $('#trainerInfo').html('<i class="bi bi-info-circle"></i> ' + bio);
+                } else {
+                    $('#trainerInfo').html('');
+                }
+                checkAvailability();
+            });
+            
+            // Check availability when date or time changes
+            $('#appointmentDate, #appointmentTime').change(function() {
+                checkAvailability();
+            });
+            
+            function checkAvailability() {
+                var trainerId = $('#trainerSelect').val();
+                var serviceId = $('#serviceSelect').val();
+                var date = $('#appointmentDate').val();
+                var time = $('#appointmentTime').val();
+                
+                if (trainerId && serviceId && date && time) {
+                    $.ajax({
+                        url: '@Url.Action("CheckAvailability", "Appointment")',
+                        type: 'GET',
+                        data: {
+                            trainerId: trainerId,
+                            serviceId: serviceId,
+                            date: date,
+                            time: time
+                        },
+                        success: function(data) {
+                            var checkDiv = $('#availabilityCheck');
+                            checkDiv.show();
+                            if (data.available) {
+                                checkDiv.removeClass('alert-danger').addClass('alert-success');
+                                checkDiv.html('<i class="bi bi-check-circle"></i> ' + data.message);
+                                $('#submitBtn').prop('disabled', false);
+                            } else {
+                                checkDiv.removeClass('alert-success').addClass('alert-danger');
+                                checkDiv.html('<i class="bi bi-exclamation-triangle"></i> ' + data.message);
+                                $('#submitBtn').prop('disabled', true);
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+}

@@ -1,0 +1,119 @@
+@model FitnessCenterManagement.Models.Trainer
+
+@{
+    ViewData["Title"] = "Müsaitliği Yönet";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-warning">
+                    <h4 class="mb-0"><i class="bi bi-calendar3"></i> Müsaitliği Yönet - @Model.Name</h4>
+                </div>
+                <div class="card-body">
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success alert-dismissible fade show">
+                            @TempData["SuccessMessage"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    }
+                    
+                    <h5>Yeni Müsaitlik Ekle</h5>
+                    <form asp-action="AddAvailability" method="post" class="mb-4">
+                        <input type="hidden" name="trainerId" value="@Model.Id" />
+                        
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label class="form-label">Haftanın Günü</label>
+                                <select name="dayOfWeek" class="form-select" required>
+                                    <option value="1">Pazartesi</option>
+                                    <option value="2">Salı</option>
+                                    <option value="3">Çarşamba</option>
+                                    <option value="4">Perşembe</option>
+                                    <option value="5">Cuma</option>
+                                    <option value="6">Cumartesi</option>
+                                    <option value="0">Pazar</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Başlangıç Saati</label>
+                                <input type="time" name="startTime" class="form-control" required />
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Bitiş Saati</label>
+                                <input type="time" name="endTime" class="form-control" required />
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">&nbsp;</label>
+                                <button type="submit" class="btn btn-success w-100">
+                                    <i class="bi bi-plus-circle"></i> Ekle
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <hr>
+                    
+                    <h5>Mevcut Müsaitlik Programı</h5>
+                    @if (Model.Availabilities.Any())
+                    {
+                        <table class="table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Gün</th>
+                                    <th>Başlangıç Saati</th>
+                                    <th>Bitiş Saati</th>
+                                    <th>Durum</th>
+                                    <th>İşlem</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var avail in Model.Availabilities.OrderBy(a => a.DayOfWeek))
+                                {
+                                    <tr>
+                                        <td><strong>@avail.DayOfWeek</strong></td>
+                                        <td>@avail.StartTime</td>
+                                        <td>@avail.EndTime</td>
+                                        <td>
+                                            @if (avail.IsActive)
+                                            {
+                                                <span class="badge bg-success">Aktif</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-secondary">Pasif</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            <form asp-action="DeleteAvailability" method="post" style="display:inline;">
+                                                <input type="hidden" name="id" value="@avail.Id" />
+                                                <input type="hidden" name="trainerId" value="@Model.Id" />
+                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Emin misiniz?')">
+                                                    <i class="bi bi-trash"></i> Kaldır
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle"></i> Müsaitlik programı ayarlanmamış. Yukarıdan slot ekleyin.
+                        </div>
+                    }
+                    
+                    <div class="mt-3">
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Listeye Dön
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

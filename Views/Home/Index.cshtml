@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<div class="container">
+    <div class="text-center mb-5">
+        <h1 class="display-4"><i class="bi bi-heart-pulse"></i> Fitness Center Yönetim Sistemi</h1>
+        <p class="lead text-muted">Modern fitness merkezi yönetimi için kapsamlı çözüm</p>
+    </div>
+
+    <div class="row g-4 mb-5 justify-content-center">
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-person-badge text-primary" style="font-size: 3rem;"></i>
+                        <h5 class="card-title mt-3">Eğitmen Yönetimi</h5>
+                        <p class="card-text">Eğitmenleri yönetin, programlarını düzenleyin ve müsaitlik durumlarını takip edin.</p>
+                        <a asp-controller="Trainers" asp-action="Index" class="btn btn-primary">Git</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-calendar-check text-success" style="font-size: 3rem;"></i>
+                    <h5 class="card-title mt-3">Randevu Sistemi</h5>
+                    <p class="card-text">Randevularınızı görüntüleyin, yeni randevu alın ve yönetin.</p>
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <a asp-controller="Appointment" asp-action="MyAppointments" class="btn btn-success">Git</a>
+                    }
+                    else
+                    {
+                        <a asp-controller="Account" asp-action="Login" class="btn btn-success">Giriş Yap</a>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-robot text-info" style="font-size: 3rem;"></i>
+                    <h5 class="card-title mt-3">AI Fitness Planı</h5>
+                    <p class="card-text">Yapay zeka destekli kişiselleştirilmiş fitness ve diyet planı oluşturun.</p>
+                    <a asp-controller="AIFitness" asp-action="GeneratePlan" class="btn btn-info">Git</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm border-warning">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0"><i class="bi bi-cloud-arrow-up"></i> REST API</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">LINQ sorguları kullanarak veritabanından veri çeken REST API endpoint'leri.</p>
+                        <div class="text-center">
+                            <a href="/api-test.html" target="_blank" class="btn btn-warning">
+                                <i class="bi bi-play-circle"></i> API Test Sayfası
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

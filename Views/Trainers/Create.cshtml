@@ -1,0 +1,91 @@
+@model FitnessCenterManagement.Models.Trainer
+
+@{
+    ViewData["Title"] = "Eğitmen Ekle";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0"><i class="bi bi-person-plus"></i> Yeni Eğitmen Ekle</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Name" class="form-label"></label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Email" class="form-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="PhoneNumber" class="form-label"></label>
+                                <input asp-for="PhoneNumber" class="form-control" />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="IsAvailable" class="form-label"></label>
+                                <select asp-for="IsAvailable" class="form-select">
+                                    <option value="true">Müsait</option>
+                                    <option value="false">Müsait Değil</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Biography" class="form-label"></label>
+                            <textarea asp-for="Biography" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="Biography" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="ImageUrl" class="form-label"></label>
+                            <input asp-for="ImageUrl" class="form-control" />
+                            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Hizmetler</label>
+                            <select name="selectedServices" class="form-select" multiple size="5">
+                                @if (ViewBag.Services != null)
+                                {
+                                    @foreach (var service in (MultiSelectList)ViewBag.Services)
+                                    {
+                                        <option value="@service.Value">@service.Text</option>
+                                    }
+                                }
+                            </select>
+                            <small class="text-muted">Birden fazla hizmet seçmek için Ctrl tuşunu basılı tutun</small>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left"></i> Listeye Dön
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-check-circle"></i> Eğitmen Ekle
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

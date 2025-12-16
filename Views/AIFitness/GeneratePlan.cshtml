@@ -1,0 +1,384 @@
+@*
+    =============================================================================
+    AI FITNESS & DİYET PLANI OLUŞTURUCU - VIEW DOSYASI
+    =============================================================================
+    
+    AÇIKLAMA:
+    Bu Razor view dosyası, yapay zeka destekli fitness ve diyet planı oluşturma
+    sayfasının görünümünü tanımlar. Kullanıcıdan form verileri alır ve AI tarafından
+    oluşturulan planı gösterir.
+    
+    YAPISI:
+    1. FORM BÖLÜMÜ: Kilo, boy, yaş, vücut tipi ve hedef bilgilerini alır
+    2. SONUÇ BÖLÜMÜ: AI'dan gelen planı Markdown'dan HTML'e çevirip gösterir
+    
+    KULLANILAN TEKNOLOJİLER:
+    - ASP.NET Core Razor syntax (@model, @ViewBag, asp-for vb.)
+    - Bootstrap 5 (grid sistemi, kartlar, formlar)
+    - Bootstrap Icons (bi bi-* ikonları)
+    - Regex ile Markdown -> HTML dönüşümü
+    
+    MODEL:
+    - AIFitnessPlanViewModel (kilo, boy, yaş, vücut tipi, hedef)
+    
+    CONTROLLER:
+    - AIFitnessController.GeneratePlan (GET ve POST)
+    
+    =============================================================================
+*@
+
+@* ViewModel'i tanımla - Bu sayfa AIFitnessPlanViewModel kullanır *@
+@model FitnessCenterManagement.ViewModels.AIFitnessPlanViewModel
+
+@* Sayfa başlığını ayarla - Layout'ta <title> tagında kullanılır *@
+@{
+    ViewData["Title"] = "AI Fitness & Diyet Planı Oluşturucu";
+}
+
+@* ============================================ *@
+@* ANA KONTEYNER                                *@
+@* ============================================ *@
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            
+            @* ============================================ *@
+            @* ANA KART - Form ve sonuçları içerir         *@
+            @* ============================================ *@
+            <div class="card shadow-lg border-0">
+                
+                @* Kart başlığı - Gradient arka plan *@
+                <div class="card-header text-white py-3" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <h4 class="mb-0">
+                        <i class="bi bi-robot"></i> 🤖 AI Fitness & Diyet Planı Oluşturucu
+                    </h4>
+                    <small class="opacity-75">Yapay zeka destekli kişiselleştirilmiş plan</small>
+                </div>
+                
+                <div class="card-body p-4">
+                    
+                    @* Bilgi kutusu - Kullanıcıya yönerge *@
+                    <div class="alert alert-info border-0">
+                        <i class="bi bi-lightbulb"></i> Bilgilerinizi girin ve yapay zeka size özel bir fitness ve diyet planı oluştursun.
+                    </div>
+                    
+                    @* ============================================ *@
+                    @* FORM BÖLÜMÜ                                  *@
+                    @* ============================================ *@
+                    @* asp-action: Form POST edildiğinde hangi action'a gideceğini belirtir *@
+                    <form asp-action="GeneratePlan" method="post">
+                        
+                        @* Model doğrulama hatalarını göster *@
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                        
+                        @* ----- SATIR 1: Kilo ve Boy ----- *@
+                        <div class="row">
+                            @* Kilo alanı *@
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Weight" class="form-label fw-bold">
+                                    <i class="bi bi-speedometer2"></i> Kilo
+                                </label>
+                                <div class="input-group">
+                                    @* asp-for: Model property'sine bağlar (two-way binding) *@
+                                    <input asp-for="Weight" class="form-control form-control-lg" type="number" step="0.1" placeholder="70" />
+                                    <span class="input-group-text">kg</span>
+                                </div>
+                                @* Doğrulama hatası mesajı *@
+                                <span asp-validation-for="Weight" class="text-danger small"></span>
+                            </div>
+                            
+                            @* Boy alanı *@
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Height" class="form-label fw-bold">
+                                    <i class="bi bi-arrows-vertical"></i> Boy
+                                </label>
+                                <div class="input-group">
+                                    <input asp-for="Height" class="form-control form-control-lg" type="number" step="0.1" placeholder="175" />
+                                    <span class="input-group-text">cm</span>
+                                </div>
+                                <span asp-validation-for="Height" class="text-danger small"></span>
+                            </div>
+                        </div>
+                        
+                        @* ----- SATIR 2: Yaş ve Vücut Tipi ----- *@
+                        <div class="row">
+                            @* Yaş alanı (isteğe bağlı) *@
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Age" class="form-label fw-bold">
+                                    <i class="bi bi-calendar3"></i> Yaş
+                                </label>
+                                <input asp-for="Age" class="form-control form-control-lg" type="number" placeholder="25" />
+                                <span asp-validation-for="Age" class="text-danger small"></span>
+                            </div>
+                            
+                            @* Vücut tipi seçimi (isteğe bağlı) *@
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="BodyType" class="form-label fw-bold">
+                                    <i class="bi bi-person-standing"></i> Vücut Tipi
+                                </label>
+                                <select asp-for="BodyType" class="form-select form-select-lg">
+                                    <option value="">-- Seçiniz --</option>
+                                    <option value="Ektomorf (İnce yapılı)">🦴 Ektomorf (İnce yapılı)</option>
+                                    <option value="Mezomorf (Atletik yapılı)">💪 Mezomorf (Atletik yapılı)</option>
+                                    <option value="Endomorf (Geniş yapılı)">🐻 Endomorf (Geniş yapılı)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        @* ----- SATIR 3: Fitness Hedefi ----- *@
+                        <div class="mb-4">
+                            <label asp-for="Goal" class="form-label fw-bold">
+                                <i class="bi bi-bullseye"></i> Fitness Hedefi
+                            </label>
+                            <select asp-for="Goal" class="form-select form-select-lg">
+                                <option value="Weight Loss">🔥 Kilo Verme</option>
+                                <option value="Muscle Gain">💪 Kas Kazanma</option>
+                                <option value="Maintenance" selected>⚖️ Kiloyu Koruma</option>
+                                <option value="General Fitness">🏃 Genel Fitness</option>
+                            </select>
+                            <span asp-validation-for="Goal" class="text-danger small"></span>
+                        </div>
+                        
+                        @* ----- Gönder Butonu ----- *@
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-lg px-5 py-3 text-white" 
+                                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <i class="bi bi-magic"></i> ✨ Planımı Oluştur
+                            </button>
+                        </div>
+                    </form>
+                    
+                    @* ============================================ *@
+                    @* SONUÇ BÖLÜMÜ - AI'dan gelen plan            *@
+                    @* ============================================ *@
+                    @* ViewBag.GeneratedPlan doluysa sonucu göster *@
+                    @if (ViewBag.GeneratedPlan != null)
+                    {
+                        <hr class="my-5">
+                        
+                        <div class="card border-0 shadow-lg">
+                            @* Sonuç kartı başlığı *@
+                            <div class="card-header text-white py-3" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                                <h5 class="mb-0"><i class="bi bi-stars"></i> 🎯 Kişiselleştirilmiş Planınız</h5>
+                            </div>
+                            <div class="card-body p-4">
+                                
+                                @* Plan içeriği - Markdown'dan HTML'e dönüştürülür *@
+                                <div class="plan-content" id="planContent">
+                                    @{
+                                        // AI'dan gelen Markdown formatındaki planı al
+                                        string planHtml = ViewBag.GeneratedPlan.ToString();
+                                        
+                                        // ============================================
+                                        // MARKDOWN -> HTML DÖNÜŞÜMÜ
+                                        // Regex kullanarak Markdown formatını HTML'e çeviriyoruz
+                                        // ============================================
+                                        
+                                        // #### Başlık 4 -> <h6> (en küçük başlık)
+                                        planHtml = System.Text.RegularExpressions.Regex.Replace(planHtml, @"^#### (.+)$", "<h6 class='text-info mt-3 mb-2'><i class='bi bi-dot'></i> $1</h6>", System.Text.RegularExpressions.RegexOptions.Multiline);
+                                        
+                                        // ### Başlık 3 -> <h5>
+                                        planHtml = System.Text.RegularExpressions.Regex.Replace(planHtml, @"^### (.+)$", "<h5 class='text-primary mt-4 mb-3'><i class='bi bi-chevron-right'></i> $1</h5>", System.Text.RegularExpressions.RegexOptions.Multiline);
+                                        
+                                        // ## Başlık 2 -> <h4> (ana bölüm başlıkları)
+                                        planHtml = System.Text.RegularExpressions.Regex.Replace(planHtml, @"^## (.+)$", "<h4 class='section-title'><i class='bi bi-star-fill'></i> $1</h4>", System.Text.RegularExpressions.RegexOptions.Multiline);
+                                        
+                                        // # Başlık 1 -> <h3>
+                                        planHtml = System.Text.RegularExpressions.Regex.Replace(planHtml, @"^# (.+)$", "<h3 class='text-dark mt-4 mb-3'>$1</h3>", System.Text.RegularExpressions.RegexOptions.Multiline);
+                                        
+                                        // Tablo ayraç satırlarını kaldır (|---|---|)
+                                        planHtml = System.Text.RegularExpressions.Regex.Replace(planHtml, @"^\|[-:\s|]+\|$", "", System.Text.RegularExpressions.RegexOptions.Multiline);
+                                        
+                                        // Tablo satırlarını div'e çevir
+                                        planHtml = System.Text.RegularExpressions.Regex.Replace(planHtml, @"^\| (.+) \|$", "<div class='table-row'>$1</div>", System.Text.RegularExpressions.RegexOptions.Multiline);
+                                        
+                                        // **kalın** -> <strong>
+                                        planHtml = System.Text.RegularExpressions.Regex.Replace(planHtml, @"\*\*(.+?)\*\*", "<strong>$1</strong>");
+                                        
+                                        // *italik* -> <em>
+                                        planHtml = System.Text.RegularExpressions.Regex.Replace(planHtml, @"\*(.+?)\*", "<em>$1</em>");
+                                        
+                                        // Numaralı liste: 1. madde -> badge'li div
+                                        planHtml = System.Text.RegularExpressions.Regex.Replace(planHtml, @"^(\d+)\. (.+)$", "<div class='numbered-item'><span class='num-badge'>$1</span><span class='num-text'>$2</span></div>", System.Text.RegularExpressions.RegexOptions.Multiline);
+                                        
+                                        // Madde işaretli liste: - madde -> ikonlu div
+                                        planHtml = System.Text.RegularExpressions.Regex.Replace(planHtml, @"^- (.+)$", "<div class='list-item'><i class='bi bi-check-circle-fill text-success'></i> $1</div>", System.Text.RegularExpressions.RegexOptions.Multiline);
+                                        
+                                        // Yatay çizgi: --- -> <hr>
+                                        planHtml = System.Text.RegularExpressions.Regex.Replace(planHtml, @"^---+$", "<hr class='my-4'>", System.Text.RegularExpressions.RegexOptions.Multiline);
+                                        
+                                        // Paragraf ayrımları
+                                        planHtml = planHtml.Replace("\n\n", "</p><p class='mb-2'>");
+                                        planHtml = "<p class='mb-2'>" + planHtml + "</p>";
+                                    }
+                                    @* HTML olarak render et (XSS riski olmadığından güvenli) *@
+                                    @Html.Raw(planHtml)
+                                </div>
+                                
+                                @* Uyarı mesajı *@
+                                <div class="alert alert-warning mt-4 border-0">
+                                    <i class="bi bi-exclamation-triangle"></i> <strong>Önemli:</strong> Bu plan yapay zeka tarafından oluşturulmuştur. Yeni bir programa başlamadan önce sağlık uzmanına danışın.
+                                </div>
+                                
+                                @* Aksiyon butonları *@
+                                <div class="d-flex justify-content-center gap-3 mt-4">
+                                    @* Yazdır butonu - window.print() JavaScript fonksiyonunu çağırır *@
+                                    <button class="btn btn-success btn-lg" onclick="window.print()">
+                                        <i class="bi bi-printer"></i> Yazdır
+                                    </button>
+                                    @* Yeni plan oluştur - GET isteği yaparak formu temizler *@
+                                    <a asp-action="GeneratePlan" class="btn btn-outline-secondary btn-lg">
+                                        <i class="bi bi-arrow-clockwise"></i> Yeni Plan
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* ============================================ *@
+@* SCRIPTS SECTION                              *@
+@* Form doğrulama için gerekli scriptler        *@
+@* ============================================ *@
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+@* ============================================ *@
+@* STYLE SECTION                                *@
+@* Sayfa özel CSS stilleri                      *@
+@* ============================================ *@
+<style>
+    /* Plan içeriği genel stilleri */
+    .plan-content {
+        line-height: 1.8;      /* Satır yüksekliği - okunabilirlik için */
+        font-size: 1rem;       /* Temel font boyutu */
+    }
+    
+    .plan-content p {
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Ana bölüm başlıkları için gradient stil */
+    .section-title {
+        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+    }
+    
+    .section-title i {
+        margin-right: 8px;
+    }
+    
+    /* Madde işaretli liste öğeleri için stil */
+    .list-item {
+        padding: 8px 15px;
+        margin: 5px 0;
+        background: #f8f9fa;           /* Açık gri arka plan */
+        border-radius: 6px;
+        border-left: 3px solid #28a745; /* Yeşil sol kenarlık */
+    }
+    
+    .list-item i {
+        margin-right: 10px;
+    }
+    
+    /* Numaralı liste öğeleri için stil */
+    .numbered-item {
+        display: flex;
+        align-items: flex-start;
+        padding: 12px 15px;
+        margin: 8px 0;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+        border-radius: 8px;
+        border-left: 4px solid #667eea; /* Mor sol kenarlık */
+    }
+    
+    /* Numara badge'i (yuvarlak içinde numara) */
+    .num-badge {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;            /* Tam yuvarlak */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 0.85rem;
+        margin-right: 12px;
+        flex-shrink: 0;                /* Küçülmesini engelle */
+    }
+    
+    .num-text {
+        flex: 1;
+    }
+    
+    /* Tablo satırları için stil */
+    .table-row {
+        background: #f8f9fa;
+        padding: 10px 15px;
+        margin: 3px 0;
+        border-radius: 6px;
+        border-left: 3px solid #667eea;
+        font-size: 0.95rem;
+    }
+    
+    /* Tablo stilleri */
+    .plan-content .table {
+        margin: 15px 0;
+        font-size: 0.95rem;
+    }
+    
+    .plan-content .table th {
+        white-space: nowrap;           /* Başlıklar tek satırda kalsın */
+    }
+    
+    .plan-content .table td {
+        vertical-align: middle;
+    }
+    
+    /* Alt başlıklar için stil */
+    .plan-content h5 {
+        color: #667eea;
+        border-bottom: 2px dashed #e0e0e0;
+        padding-bottom: 8px;
+    }
+    
+    .plan-content h6 {
+        color: #17a2b8;
+    }
+    
+    /* Kartlar için yuvarlak köşeler */
+    .card {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    
+    /* Form elemanları odaklandığında mor kenarlık */
+    .form-control:focus, .form-select:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    }
+    
+    /* Yazdırma modu için stiller */
+    @@media print {
+        /* Yazdırırken gizlenecek elemanlar */
+        .btn, .alert-warning, nav, footer, form {
+            display: none !important;
+        }
+        /* Başlık arka planını yazdırmada göster */
+        .section-title {
+            background: #333 !important;
+            -webkit-print-color-adjust: exact;
+        }
+    }
+</style>

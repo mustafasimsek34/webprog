@@ -1,0 +1,175 @@
+@model IEnumerable<FitnessCenterManagement.Models.Appointment>
+
+@{
+    ViewData["Title"] = "Yönetim Paneli";
+}
+
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col">
+            <h2><i class="bi bi-speedometer2"></i> Yönetim Paneli</h2>
+            <p class="text-muted">Fitness Merkezi Yönetim Sistemine Hoş Geldiniz</p>
+        </div>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="card border-primary shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-muted mb-1">Toplam Üye</h6>
+                            <h3 class="mb-0">@ViewBag.TotalMembers</h3>
+                        </div>
+                        <i class="bi bi-people-fill text-primary" style="font-size: 2rem;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-success shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-muted mb-1">Toplam Eğitmen</h6>
+                            <h3 class="mb-0">@ViewBag.TotalTrainers</h3>
+                        </div>
+                        <i class="bi bi-person-badge-fill text-success" style="font-size: 2rem;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-info shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-muted mb-1">Toplam Hizmet</h6>
+                            <h3 class="mb-0">@ViewBag.TotalServices</h3>
+                        </div>
+                        <i class="bi bi-list-check text-info" style="font-size: 2rem;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-warning shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-muted mb-1">Bekleyen</h6>
+                            <h3 class="mb-0">@ViewBag.PendingAppointments</h3>
+                        </div>
+                        <i class="bi bi-clock-fill text-warning" style="font-size: 2rem;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="row mb-4">
+        <div class="col">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-grid-3x3-gap"></i> Hızlı İşlemler</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <a asp-controller="Trainers" asp-action="Index" class="btn btn-outline-primary w-100 p-3">
+                                <i class="bi bi-person-badge d-block mb-2" style="font-size: 2rem;"></i>
+                                Eğitmenleri Yönet
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a asp-controller="Services" asp-action="Index" class="btn btn-outline-success w-100 p-3">
+                                <i class="bi bi-list-stars d-block mb-2" style="font-size: 2rem;"></i>
+                                Hizmetleri Yönet
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a asp-controller="Gyms" asp-action="Index" class="btn btn-outline-info w-100 p-3">
+                                <i class="bi bi-building d-block mb-2" style="font-size: 2rem;"></i>
+                                Spor Salonu Detayları
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a asp-controller="Appointments" asp-action="Index" class="btn btn-outline-warning w-100 p-3">
+                                <i class="bi bi-calendar-check d-block mb-2" style="font-size: 2rem;"></i>
+                                Tüm Randevular
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Appointments -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h5 class="mb-0"><i class="bi bi-clock-history"></i> Son Randevular</h5>
+                </div>
+                <div class="card-body">
+                    @if (Model != null && Model.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Üye</th>
+                                        <th>Eğitmen</th>
+                                        <th>Hizmet</th>
+                                        <th>Tarih & Saat</th>
+                                        <th>Durum</th>
+                                        <th>Oluşturulma</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var appointment in Model)
+                                    {
+                                        <tr>
+                                            <td>@appointment.Member.FullName</td>
+                                            <td>@appointment.Trainer.Name</td>
+                                            <td>@appointment.Service.Name</td>
+                                            <td>@appointment.AppointmentDate.ToShortDateString() @appointment.AppointmentTime</td>
+                                            <td>
+                                                @if (appointment.Status == "Pending")
+                                                {
+                                                    <span class="badge bg-warning text-dark">@appointment.Status</span>
+                                                }
+                                                else if (appointment.Status == "Confirmed")
+                                                {
+                                                    <span class="badge bg-success">@appointment.Status</span>
+                                                }
+                                                else if (appointment.Status == "Cancelled")
+                                                {
+                                                    <span class="badge bg-danger">@appointment.Status</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-secondary">@appointment.Status</span>
+                                                }
+                                            </td>
+                                            <td>@appointment.CreatedDate.ToString("g")</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle"></i> Randevu bulunamadı.
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
