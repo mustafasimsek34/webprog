@@ -46,5 +46,5 @@ Varsayılan admin e-posta (seed tarafından ekleniyse): `b241210383@sakarya.edu.
 
 ---
 
-Hazırlayan: [mustafa şimşek]  
+Hazırlayan: mustafa şimşek  
 Öğrenci No: B241210383
