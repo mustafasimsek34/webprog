@@ -17,7 +17,8 @@ Bu proje, ASP.NET Core MVC ile geliştirilmiş bir Spor Salonu Yönetim ve Rande
 - Entity Framework Core
 - SQL Server (veya SQLite)
 - Bootstrap 5, jQuery
-- Google Gemini AI (API entegrasyonu)
+- Google Gemini AI
+  
 
 ## Dosya Yapısı (Önemli Klasörler)
 - `Controllers/` - MVC controller'lar
