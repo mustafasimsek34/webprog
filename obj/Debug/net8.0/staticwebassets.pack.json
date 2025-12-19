@@ -1,8 +1,12 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Dell\\Documents\\GitHub\\webprog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css",
+      "Id": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css",
       "PackagePath": "staticwebassets\\FitnessCenterManagement.xiq0yjs386.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FitnessCenterManagement.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

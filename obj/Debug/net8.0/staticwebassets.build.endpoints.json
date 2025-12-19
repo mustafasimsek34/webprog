@@ -29,7 +29,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 19 Dec 2025 20:01:30 GMT"
+          "Value": "Fri, 19 Dec 2025 20:08:41 GMT"
         }
       ],
       "EndpointProperties": [
@@ -66,7 +66,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 19 Dec 2025 20:01:30 GMT"
+          "Value": "Fri, 19 Dec 2025 20:08:41 GMT"
         }
       ],
       "EndpointProperties": [
@@ -81,6 +81,88 @@
         {
           "Name": "label",
           "Value": "FitnessCenterManagement.styles.css"
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "405"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SOJv9WMlo/Eh+B4JttnZvh2OnXo7w1ntSWB1ZQehnVs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Dec 2025 20:14:59 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SOJv9WMlo/Eh+B4JttnZvh2OnXo7w1ntSWB1ZQehnVs="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.okmc5woji6.css",
+      "AssetFile": "css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "405"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SOJv9WMlo/Eh+B4JttnZvh2OnXo7w1ntSWB1ZQehnVs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Dec 2025 20:14:59 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "okmc5woji6"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SOJv9WMlo/Eh+B4JttnZvh2OnXo7w1ntSWB1ZQehnVs="
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
         }
       ]
     }

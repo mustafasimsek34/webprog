@@ -1,18 +1,26 @@
 {
   "Version": 1,
-  "Hash": "fKUawY0AtDDyyGbFaKtPykc3Sjiivw07rE5JR81GTcc=",
+  "Hash": "1mtPjca8wck04TQieT4nn9Qmf/GS/z0eQH3QEE4kUk4=",
   "Source": "FitnessCenterManagement",
   "BasePath": "_content/FitnessCenterManagement",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FitnessCenterManagement\\wwwroot",
+      "Source": "FitnessCenterManagement",
+      "ContentRoot": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\wwwroot\\",
+      "BasePath": "_content/FitnessCenterManagement",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Dell\\Documents\\GitHub\\webprog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FitnessCenterManagement.styles.css",
+      "Identity": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FitnessCenterManagement.styles.css",
       "SourceId": "FitnessCenterManagement",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Dell\\Documents\\GitHub\\webprog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/FitnessCenterManagement",
       "RelativePath": "FitnessCenterManagement#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
@@ -27,13 +35,13 @@
       "Integrity": "t2s9WqTvUQTR3euJsMMzdwrkP2C+0ck8A+VncRshz/M=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dell\\Documents\\GitHub\\webprog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FitnessCenterManagement.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FitnessCenterManagement.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Dell\\Documents\\GitHub\\webprog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css",
+      "Identity": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css",
       "SourceId": "FitnessCenterManagement",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Dell\\Documents\\GitHub\\webprog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/FitnessCenterManagement",
       "RelativePath": "FitnessCenterManagement#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +56,116 @@
       "Integrity": "t2s9WqTvUQTR3euJsMMzdwrkP2C+0ck8A+VncRshz/M=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dell\\Documents\\GitHub\\webprog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\wwwroot\\css\\site.css",
+      "SourceId": "FitnessCenterManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\wwwroot\\",
+      "BasePath": "_content/FitnessCenterManagement",
+      "RelativePath": "css/site#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "okmc5woji6",
+      "Integrity": "SOJv9WMlo/Eh+B4JttnZvh2OnXo7w1ntSWB1ZQehnVs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
     }
   ],
   "Endpoints": [
     {
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "405"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SOJv9WMlo/Eh+B4JttnZvh2OnXo7w1ntSWB1ZQehnVs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Dec 2025 20:14:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SOJv9WMlo/Eh+B4JttnZvh2OnXo7w1ntSWB1ZQehnVs="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.okmc5woji6.css",
+      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "405"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SOJv9WMlo/Eh+B4JttnZvh2OnXo7w1ntSWB1ZQehnVs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Dec 2025 20:14:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "okmc5woji6"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SOJv9WMlo/Eh+B4JttnZvh2OnXo7w1ntSWB1ZQehnVs="
+        }
+      ]
+    },
+    {
       "Route": "FitnessCenterManagement.bundle.scp.css",
-      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css",
+      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -75,7 +186,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 19 Dec 2025 20:01:30 GMT"
+          "Value": "Fri, 19 Dec 2025 20:08:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -91,7 +202,7 @@
     },
     {
       "Route": "FitnessCenterManagement.styles.css",
-      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FitnessCenterManagement.styles.css",
+      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FitnessCenterManagement.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -112,7 +223,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 19 Dec 2025 20:01:30 GMT"
+          "Value": "Fri, 19 Dec 2025 20:08:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -128,7 +239,7 @@
     },
     {
       "Route": "FitnessCenterManagement.xiq0yjs386.bundle.scp.css",
-      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css",
+      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -149,7 +260,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 19 Dec 2025 20:01:30 GMT"
+          "Value": "Fri, 19 Dec 2025 20:08:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -173,7 +284,7 @@
     },
     {
       "Route": "FitnessCenterManagement.xiq0yjs386.styles.css",
-      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FitnessCenterManagement.styles.css",
+      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FitnessCenterManagement.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -194,7 +305,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 19 Dec 2025 20:01:30 GMT"
+          "Value": "Fri, 19 Dec 2025 20:08:41 GMT"
         },
         {
           "Name": "Cache-Control",

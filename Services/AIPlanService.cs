@@ -320,9 +320,6 @@ Planı markdown formatında, başlıklar ve listeler ile düzenli şekilde sun."
             var plan = $@"
 ## Kişiselleştirilmiş Fitness & Diyet Planı (Otomatik Oluşturuldu)
 
-> **Not:** Şu an yapay zeka servisine erişilemediği için otomatik oluşturulan standart plan gösterilmektedir.
-> **Hata Detayı:** {debugInfo}
-
 **Profiliniz:**
 - Kilo: {weight} kg
 - Boy: {height} cm
