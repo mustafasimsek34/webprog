@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * ACCOUNT CONTROLLER
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `AccountController` kullanıcı kimlik doğrulama, kayıt, giriş/çıkış ve erişim
+ * reddi işlemlerini yönetir.
+ *
+ * KULLANIM:
+ * - `Register`, `Login`, `Logout`, `AccessDenied` ve `Profile` action'larını içerir.
+ *
+ * =============================================================================
+ */
+
 using FitnessCenterManagement.Models;
 using FitnessCenterManagement.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -122,6 +137,24 @@ namespace FitnessCenterManagement.Controllers
         [HttpGet]
         public IActionResult AccessDenied()
         {
+            return View();
+        }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> Profile()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return Challenge();
+            }
+
+            ViewData["FullName"] = user.FullName;
+            ViewData["Email"] = user.Email;
+            ViewData["PhoneNumber"] = user.PhoneNumber;
+            ViewData["RegistrationDate"] = user.RegistrationDate.ToString("g");
+
             return View();
         }
     }

@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * TRAINER MODEL
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `Trainer` uygulamadaki eğitmenleri temsil eden model sınıfıdır. İsim, iletişim
+ * bilgileri, biyografi ve ilişkili servis/uygunluk bilgilerini içerir.
+ *
+ * KULLANIM:
+ * - Admin arayüzünde eğitmen yönetimi, randevu ilişkileri ve API raporlamada kullanılır.
+ *
+ * =============================================================================
+ */
+
 using System.ComponentModel.DataAnnotations;
 
 namespace FitnessCenterManagement.Models

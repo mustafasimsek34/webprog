@@ -1,3 +1,20 @@
+/*
+ * =============================================================================
+ * PROGRAM (UYGULAMA GİRİŞ NOKTASI)
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `Program.cs` uygulamanın giriş noktasıdır. Web uygulamasını oluşturur,
+ * bağımlılıkları (services) kaydeder, middleware pipeline'ını yapılandırır ve
+ * uygulamayı başlatır.
+ *
+ * KULLANIM:
+ * - Hizmet kayıtları (DbContext, Identity, HttpClient vb.) burada yapılır.
+ * - `app.Run()` ile HTTP sunucusu başlatılır.
+ *
+ * =============================================================================
+ */
+
 using FitnessCenterManagement.Data;
 using FitnessCenterManagement.Models;
 using FitnessCenterManagement.Services;
@@ -13,7 +30,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 // Entity Framework Core ile SQL Server kullanacağımızı belirtiyoruz
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer(connectionString, sqlOptions =>
+        sqlOptions.EnableRetryOnFailure()));
 
 // Identity (Üyelik) sistemini yapılandırıyoruz
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>

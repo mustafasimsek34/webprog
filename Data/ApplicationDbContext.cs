@@ -1,3 +1,19 @@
+/*
+ * =============================================================================
+ * APPLICATION DB CONTEXT
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `ApplicationDbContext` Entity Framework Core DbContext sınıfıdır. Identity ve
+ * uygulamaya ait DbSet'leri (Gyms, Services, Trainers, Appointments vb.) içerir
+ * ve veritabanı model konfigürasyonlarını `OnModelCreating` içinde tanımlar.
+ *
+ * KULLANIM:
+ * - `Program.cs` içinde servis olarak kaydedilir ve uygulama tarafından kullanılır.
+ *
+ * =============================================================================
+ */
+
 using FitnessCenterManagement.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;

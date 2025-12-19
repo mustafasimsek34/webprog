@@ -1,0 +1,331 @@
+{
+  "Version": 1,
+  "Hash": "aIia+33GYMxed9tgsVlDPHtIVX2pDZS59g4C/OSfUyY=",
+  "Source": "FitnessCenterManagement",
+  "BasePath": "_content/FitnessCenterManagement",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FitnessCenterManagement\\wwwroot",
+      "Source": "FitnessCenterManagement",
+      "ContentRoot": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\wwwroot\\",
+      "BasePath": "_content/FitnessCenterManagement",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\obj\\Release\\net8.0\\scopedcss\\bundle\\FitnessCenterManagement.styles.css",
+      "SourceId": "FitnessCenterManagement",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\obj\\Release\\net8.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/FitnessCenterManagement",
+      "RelativePath": "FitnessCenterManagement#[.{fingerprint}]?.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "Fingerprint": "xiq0yjs386",
+      "Integrity": "t2s9WqTvUQTR3euJsMMzdwrkP2C+0ck8A+VncRshz/M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\obj\\Release\\net8.0\\scopedcss\\bundle\\FitnessCenterManagement.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css",
+      "SourceId": "FitnessCenterManagement",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/FitnessCenterManagement",
+      "RelativePath": "FitnessCenterManagement#[.{fingerprint}]!.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "xiq0yjs386",
+      "Integrity": "t2s9WqTvUQTR3euJsMMzdwrkP2C+0ck8A+VncRshz/M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\wwwroot\\css\\site.css",
+      "SourceId": "FitnessCenterManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\wwwroot\\",
+      "BasePath": "_content/FitnessCenterManagement",
+      "RelativePath": "css/site#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "okmc5woji6",
+      "Integrity": "SOJv9WMlo/Eh+B4JttnZvh2OnXo7w1ntSWB1ZQehnVs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "405"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SOJv9WMlo/Eh+B4JttnZvh2OnXo7w1ntSWB1ZQehnVs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Dec 2025 20:29:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SOJv9WMlo/Eh+B4JttnZvh2OnXo7w1ntSWB1ZQehnVs="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.okmc5woji6.css",
+      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "405"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SOJv9WMlo/Eh+B4JttnZvh2OnXo7w1ntSWB1ZQehnVs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Dec 2025 20:29:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "okmc5woji6"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SOJv9WMlo/Eh+B4JttnZvh2OnXo7w1ntSWB1ZQehnVs="
+        }
+      ]
+    },
+    {
+      "Route": "FitnessCenterManagement.bundle.scp.css",
+      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1141"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"t2s9WqTvUQTR3euJsMMzdwrkP2C+0ck8A+VncRshz/M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Dec 2025 21:13:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-t2s9WqTvUQTR3euJsMMzdwrkP2C+0ck8A+VncRshz/M="
+        }
+      ]
+    },
+    {
+      "Route": "FitnessCenterManagement.styles.css",
+      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\obj\\Release\\net8.0\\scopedcss\\bundle\\FitnessCenterManagement.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1141"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"t2s9WqTvUQTR3euJsMMzdwrkP2C+0ck8A+VncRshz/M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Dec 2025 21:13:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-t2s9WqTvUQTR3euJsMMzdwrkP2C+0ck8A+VncRshz/M="
+        }
+      ]
+    },
+    {
+      "Route": "FitnessCenterManagement.xiq0yjs386.bundle.scp.css",
+      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1141"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"t2s9WqTvUQTR3euJsMMzdwrkP2C+0ck8A+VncRshz/M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Dec 2025 21:13:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xiq0yjs386"
+        },
+        {
+          "Name": "label",
+          "Value": "FitnessCenterManagement.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-t2s9WqTvUQTR3euJsMMzdwrkP2C+0ck8A+VncRshz/M="
+        }
+      ]
+    },
+    {
+      "Route": "FitnessCenterManagement.xiq0yjs386.styles.css",
+      "AssetFile": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\obj\\Release\\net8.0\\scopedcss\\bundle\\FitnessCenterManagement.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1141"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"t2s9WqTvUQTR3euJsMMzdwrkP2C+0ck8A+VncRshz/M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Dec 2025 21:13:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xiq0yjs386"
+        },
+        {
+          "Name": "label",
+          "Value": "FitnessCenterManagement.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-t2s9WqTvUQTR3euJsMMzdwrkP2C+0ck8A+VncRshz/M="
+        }
+      ]
+    }
+  ]
+}

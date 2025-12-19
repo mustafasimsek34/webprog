@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * REGISTER VIEWMODEL
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `RegisterViewModel` kullanıcı kayıt formundan gelen verileri taşıyan basit bir
+ * ViewModel sınıfıdır. İçinde ad, e-posta, telefon ve parola doğrulama kuralları bulunur.
+ *
+ * KULLANIM:
+ * - `AccountController.Register` action'ında model binding ve doğrulama için kullanılır.
+ *
+ * =============================================================================
+ */
+
 using System.ComponentModel.DataAnnotations;
 
 namespace FitnessCenterManagement.ViewModels

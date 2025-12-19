@@ -13,7 +13,6 @@
  * 2. BMI (Vücut Kitle İndeksi) hesaplanır
  * 3. Gemini AI'ya Türkçe bir prompt gönderilir
  * 4. AI'dan gelen yanıt kullanıcıya gösterilir
- * 5. Eğer AI erişilemezse, yedek (fallback) plan oluşturulur
  * 
  * API ENDPOİNTLERİ:
  * Birden fazla Gemini model endpoint'i denenir (lite, flash, pro modeller)

@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * APPOINTMENTS ADMIN CONTROLLER
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `AppointmentsController` admin rolündeki kullanıcıların tüm randevuları görüp
+ * yönetebildiği controller'dır. Randevu durum güncellemeleri için endpoint içerir.
+ *
+ * KULLANIM:
+ * - Admin panelinde randevu listesini ve durum güncellemelerini yönetir.
+ *
+ * =============================================================================
+ */
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

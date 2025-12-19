@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\FitnessCenterManagement.bundle.scp.css",
+      "PackagePath": "staticwebassets\\FitnessCenterManagement.xiq0yjs386.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.FitnessCenterManagement.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.FitnessCenterManagement.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.FitnessCenterManagement.props",
+      "PackagePath": "build\\FitnessCenterManagement.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FitnessCenterManagement.props",
+      "PackagePath": "buildMultiTargeting\\FitnessCenterManagement.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.FitnessCenterManagement.props",
+      "PackagePath": "buildTransitive\\FitnessCenterManagement.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

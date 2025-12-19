@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\FitnessCenterManagement.csproj": {}
+    "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\FitnessCenterManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\FitnessCenterManagement.csproj": {
+    "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\FitnessCenterManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\FitnessCenterManagement.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\FitnessCenterManagement.csproj",
         "projectName": "FitnessCenterManagement",
-        "projectPath": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\FitnessCenterManagement.csproj",
+        "projectPath": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\FitnessCenterManagement.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Documents\\GitHub\\webprog1\\obj\\",
+        "outputPath": "C:\\Users\\Dell\\Documents\\GitHub\\webprog2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

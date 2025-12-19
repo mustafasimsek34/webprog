@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * APPOINTMENT CONTROLLER
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `AppointmentController` kayıtlı kullanıcıların randevu oluşturma, uygunluk
+ * kontrolü ve kendi randevularını görüntüleme işlemlerini yönetir.
+ *
+ * KULLANIM:
+ * - Book, CheckAvailability, GetTrainersByService, MyAppointments gibi action'lar içerir.
+ *
+ * =============================================================================
+ */
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

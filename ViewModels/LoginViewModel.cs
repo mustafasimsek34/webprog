@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * LOGIN VIEWMODEL
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `LoginViewModel` kullanıcı giriş (login) formu için gerekli alanları ve
+ * doğrulama kurallarını tutar.
+ *
+ * KULLANIM:
+ * - `AccountController.Login` action'ında model binding ve doğrulama için kullanılır.
+ *
+ * =============================================================================
+ */
+
 using System.ComponentModel.DataAnnotations;
 
 namespace FitnessCenterManagement.ViewModels

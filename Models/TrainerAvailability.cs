@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * TRAINER AVAILABILITY MODEL
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `TrainerAvailability` eğitmenlerin hangi gün ve saatlerde müsait olduğunu
+ * temsil eden model sınıfıdır (gün, başlangıç/bitiş saatleri, aktiflik durumu).
+ *
+ * KULLANIM:
+ * - Randevu rezervasyon kontrolü ve eğitmen takvimi görüntülemede kullanılır.
+ *
+ * =============================================================================
+ */
+
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 

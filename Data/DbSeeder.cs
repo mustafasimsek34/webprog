@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * DATABASE SEEDER
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `DbSeeder` uygulama başlarken örnek roller, admin kullanıcı ve demo verileri
+ * eklemek için kullanılan yardımcı statik sınıftır.
+ *
+ * KULLANIM:
+ * - `Program.cs` içinde uygulama başlarken `DbSeeder.SeedAsync` çağrılır.
+ *
+ * =============================================================================
+ */
+
 using FitnessCenterManagement.Models;
 using Microsoft.AspNetCore.Identity;
 

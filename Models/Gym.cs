@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * GYM MODEL
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `Gym` uygulamadaki salon/şube bilgilerini tutan model sınıfıdır. Konum,
+ * çalışma saatleri ve iletişim bilgileri gibi alanları içerir.
+ *
+ * KULLANIM:
+ * - Salon listesi ve detay sayfalarında kullanılır.
+ *
+ * =============================================================================
+ */
+
 using System.ComponentModel.DataAnnotations;
 
 namespace FitnessCenterManagement.Models

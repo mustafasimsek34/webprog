@@ -1,3 +1,19 @@
+/*
+ * =============================================================================
+ * APPLICATION USER (IDENTITY)
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `ApplicationUser` IdentityUser'dan türetilmiş kullanıcı modelidir. Ek alanlar
+ * (FullName, RegistrationDate, Appointments) içerir ve uygulama kullanıcılarını
+ * temsil eder.
+ *
+ * KULLANIM:
+ * - ASP.NET Identity ile kullanıcı yönetimi ve ilişkili verilerde kullanılır.
+ *
+ * =============================================================================
+ */
+
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 

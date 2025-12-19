@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * SERVICE MODEL
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `Service` spor salonunda sunulan hizmetleri tanımlayan model sınıfıdır
+ * (isim, açıklama, süre, fiyat ve aktiflik durumu).
+ *
+ * KULLANIM:
+ * - Hizmet yönetimi, randevu rezervasyonları ve fiyatlandırma için kullanılır.
+ *
+ * =============================================================================
+ */
+
 using System.ComponentModel.DataAnnotations;
 
 namespace FitnessCenterManagement.Models

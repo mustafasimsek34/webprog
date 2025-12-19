@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * GYMS CONTROLLER
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `GymsController` spor salonu/şube bilgilerini yönetmek için CRUD action'ları
+ * sağlar. Admin paneli tarafından kullanılır.
+ *
+ * KULLANIM:
+ * - Salon ekleme, düzenleme, silme ve listeleme işlemleri burada yapılır.
+ *
+ * =============================================================================
+ */
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

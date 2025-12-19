@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * BOOK APPOINTMENT VIEWMODEL
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `BookAppointmentViewModel` randevu oluşturma formundan gelen alanları taşıyan
+ * ViewModel'dir (hizmet, eğitmen, tarih, saat, notlar vb.).
+ *
+ * KULLANIM:
+ * - `AppointmentController.Book` ve ilgili view'larda kullanılır.
+ *
+ * =============================================================================
+ */
+
 using System.ComponentModel.DataAnnotations;
 
 namespace FitnessCenterManagement.ViewModels

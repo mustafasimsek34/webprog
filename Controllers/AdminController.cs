@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * ADMIN CONTROLLER
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `AdminController` yönetici (Admin) kullanıcıları için gösterge paneli ve
+ * yönetimsel özet bilgileri sağlar (üye, eğitmen, hizmet ve randevu özetleri).
+ *
+ * KULLANIM:
+ * - Admin rolü ile erişilen dashboard sayfasını render eder.
+ *
+ * =============================================================================
+ */
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using FitnessCenterManagement.Data;

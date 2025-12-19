@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * TRAINER SERVICE MODEL
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `TrainerService` eğitmen ile hizmet arasındaki many-to-many ilişkiyi
+ * temsil eden model sınıfıdır. Hangi eğitmenin hangi hizmeti verdiğini tutar.
+ *
+ * KULLANIM:
+ * - `ApplicationDbContext` içinde DbSet olarak tanımlanır, ilgili controller'larda kullanılır.
+ *
+ * =============================================================================
+ */
+
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 

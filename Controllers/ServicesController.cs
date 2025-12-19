@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * SERVICES CONTROLLER
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `ServicesController` uygulamadaki hizmetlerin (Service) yönetimi için CRUD
+ * işlemlerini sağlar. Admin rolü ile erişilir.
+ *
+ * KULLANIM:
+ * - Hizmet ekleme, düzenleme, silme ve detay görüntüleme işlemleri burada.
+ *
+ * =============================================================================
+ */
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

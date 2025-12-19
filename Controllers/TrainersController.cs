@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * TRAINERS CONTROLLER
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `TrainersController` admin kullanıcıları için eğitmenlerin CRUD işlemlerini
+ * ve ilişkili hizmet/uygunluk yönetimini sağlar.
+ *
+ * KULLANIM:
+ * - Eğitmen oluşturma, düzenleme, silme ve detay görüntüleme işlemleri burada.
+ *
+ * =============================================================================
+ */
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;

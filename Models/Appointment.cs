@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * APPOINTMENT MODEL
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `Appointment` uygulamadaki randevu kayıtlarını tutan model sınıfıdır. Üye,
+ * eğitmen, hizmet, tarih, saat ve durum (status) bilgilerini içerir.
+ *
+ * KULLANIM:
+ * - Randevu rezervasyon, kontrol ve yönetim işlemlerinde kullanılır.
+ *
+ * =============================================================================
+ */
+
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 

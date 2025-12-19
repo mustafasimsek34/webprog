@@ -1,0 +1,28 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/FitnessCenterManagement/css/site.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-SOJv9WMlo/Eh\u002BB4JttnZvh2OnXo7w1ntSWB1ZQehnVs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"405"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022SOJv9WMlo/Eh\u002BB4JttnZvh2OnXo7w1ntSWB1ZQehnVs=\u0022"},{"Name":"Last-Modified","Value":"Fri, 19 Dec 2025 20:29:40 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/FitnessCenterManagement/css/site.okmc5woji6.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"okmc5woji6"},{"Name":"integrity","Value":"sha256-SOJv9WMlo/Eh\u002BB4JttnZvh2OnXo7w1ntSWB1ZQehnVs="},{"Name":"label","Value":"_content/FitnessCenterManagement/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"405"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022SOJv9WMlo/Eh\u002BB4JttnZvh2OnXo7w1ntSWB1ZQehnVs=\u0022"},{"Name":"Last-Modified","Value":"Fri, 19 Dec 2025 20:29:40 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/FitnessCenterManagement/FitnessCenterManagement.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\FitnessCenterManagement.xiq0yjs386.bundle.scp.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-t2s9WqTvUQTR3euJsMMzdwrkP2C\u002B0ck8A\u002BVncRshz/M="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1141"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022t2s9WqTvUQTR3euJsMMzdwrkP2C\u002B0ck8A\u002BVncRshz/M=\u0022"},{"Name":"Last-Modified","Value":"Fri, 19 Dec 2025 21:13:16 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/FitnessCenterManagement/FitnessCenterManagement.xiq0yjs386.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\FitnessCenterManagement.xiq0yjs386.bundle.scp.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"xiq0yjs386"},{"Name":"integrity","Value":"sha256-t2s9WqTvUQTR3euJsMMzdwrkP2C\u002B0ck8A\u002BVncRshz/M="},{"Name":"label","Value":"_content/FitnessCenterManagement/FitnessCenterManagement.bundle.scp.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1141"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022t2s9WqTvUQTR3euJsMMzdwrkP2C\u002B0ck8A\u002BVncRshz/M=\u0022"},{"Name":"Last-Modified","Value":"Fri, 19 Dec 2025 21:13:16 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

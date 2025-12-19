@@ -1,3 +1,19 @@
+/*
+ * =============================================================================
+ * REPORTS API CONTROLLER
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `ReportsController` REST API endpoint'leri sağlar; örn. müsait eğitmenler,
+ * randevu istatistikleri ve hizmete göre randevular gibi veri döndüren metodlar.
+ *
+ * KULLANIM:
+ * - `api/Reports/*` rotası üzerinden JSON veri döndürür ve genelde dashboard/JS
+ *   tarafında veya harici istemcilerce tüketilir.
+ *
+ * =============================================================================
+ */
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FitnessCenterManagement.Data;

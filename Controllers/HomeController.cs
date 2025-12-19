@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * HOME CONTROLLER
+ * =============================================================================
+ *
+ * AÇIKLAMA:
+ * `HomeController` uygulamanın genel (public) sayfalarını yönetir: ana sayfa,
+ * gizlilik politikası ve hata sayfası gibi işlemler burada tanımlıdır.
+ *
+ * KULLANIM:
+ * - `Index`, `Privacy`, `Error` action'ları içerir.
+ *
+ * =============================================================================
+ */
+
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using FitnessCenterManagement.Models;
